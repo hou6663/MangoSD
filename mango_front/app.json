@@ -1,0 +1,84 @@
+{
+  "pages": [
+    "pages/welcome/welcome",
+    "pages/index/index",
+    "pages/category/category",
+    "pages/search/search",
+    "pages/message_detail/message_detail",
+    "pages/add/add",
+    "pages/agreement/agreement",
+    "pages/add_detail/add_detail",
+    "pages/shop/shop",
+    "pages/shop_detail/shop_detail",
+    "pages/me/me",
+    "pages/me_fabu/me_fabu",
+    "pages/me_canyu/me_canyu",
+    "pages/me_shoucang/me_shoucang",
+    "pages/me_xiaoxi/me_xiaoxi",
+    "pages/me_about/me_about",
+    "pages/user/user",
+    "pages/postpage/postpage",
+    "components/searchBar/searchBar",
+    "pages/admin/admin",
+    "pages/admin/a_user/a_user",
+    "pages/userDetailPage/userDetailPage",
+    "pages/proclamation/proclamation",
+    "pages/homeImg/homeImg",
+    "pages/manageShop/mangageShop",
+    "pages/manageShopDetail/manageShopDetail",
+    "pages/user_chat/user_chat"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序定位"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "/images/tabBar/index.png",
+        "selectedIconPath": "/images/tabBar/index_active.png"
+      },
+      {
+        "pagePath": "pages/postpage/postpage",
+        "text": "帖子",
+        "iconPath": "/images/tabBar/message.png",
+        "selectedIconPath": "/images/tabBar/message_active.png"
+      },
+      {
+        "pagePath": "pages/add/add",
+        "text": "添加",
+        "iconPath": "/images/tabBar/add.png",
+        "selectedIconPath": "/images/tabBar/add_active.png"
+      },
+      {
+        "pagePath": "pages/shop/shop",
+        "text": "商店",
+        "iconPath": "/images/tabBar/shop.png",
+        "selectedIconPath": "/images/tabBar/shop_active.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "/images/tabBar/mine.png",
+        "selectedIconPath": "/images/tabBar/mine_active.png"
+      }
+    ]
+  },
+  "requiredBackgroundModes": [
+    "audio"
+  ],
+  "requiredPrivateInfos": [
+    "chooseLocation"
+  ],
+  "sitemapLocation": "sitemap.json"
+}

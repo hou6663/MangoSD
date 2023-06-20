@@ -1,0 +1,14 @@
+<!--components/searchBar/searchBar.wxml-->
+<view class='nav-wrap' style='height: {{height*2+20}}px;'>
+<van-search
+  value="{{ value }}"
+  label="帖子"
+  placeholder="请输入搜索关键词"
+  use-action-slot
+  bind:change="onChange"
+  bind:search="onSearch"
+  shape="round"
+  custom-class="tit_seabox"
+>
+</van-search>
+</view>

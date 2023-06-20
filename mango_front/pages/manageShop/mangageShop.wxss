@@ -1,0 +1,57 @@
+/* pages/manageShop/mangageShop.wxss */
+/* 样式规则为整个 shop-container 容器 */
+.container{
+  background-color: white;
+  padding: 10px;
+}
+.shop-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* avatar 图片样式 */
+.avatar {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+/* info 容器样式 */
+.info {
+  flex: 1;
+}
+
+/* name 标题样式 */
+.name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* intro 描述样式 */
+.intro {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+/* phone 电话样式 */
+.phone {
+  font-size: 14px;
+  color: #999;
+}
+.mangageButton{
+  padding:0 30px;
+
+}
+.mangageButton button{
+  background-color: rgba(241, 54, 29, 0.884);
+  color: #fff;
+}
+.add-notice-button{
+  margin: 10px;
+  background-color: rgb(231, 74, 74);
+  color: #fff;
+}

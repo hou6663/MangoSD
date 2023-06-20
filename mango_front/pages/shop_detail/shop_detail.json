@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "nav-bar": "/components/navbar/index"},
+    "navigationBarTitleText": "逆地理编码 - 地址解析"
+    
+}

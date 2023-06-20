@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "mp-emoji": "../../components/emoji/index",
+    "nav-bar": "/components/navbar/index"
+  },
+  "pageOrientation": "auto"
+}

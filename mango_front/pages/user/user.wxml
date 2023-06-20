@@ -1,0 +1,125 @@
+<!--pages/ucenter/user/user.wxml-->
+<view class="htmleaf-container" style="background:white;display:{{isLoading?'none':'block'}};height:100%;">
+<view class="spinner-box" style="margin:0 auto;">
+  <view class="pulse-container" style="margin-top:500rpx;">
+    <view class="pulse-bubble pulse-bubble-1"></view>
+    <view class="pulse-bubble pulse-bubble-2"></view>
+    <view class="pulse-bubble pulse-bubble-3"></view>
+  </view>
+</view>
+</view>
+<view style="display:{{isLoading?'block':'none'}};overflow: hidden;">
+
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+<view class='home-page' style='margin-top: {{height*2+20}}px'>
+<form bindsubmit="formSubmit">
+    <view class='personal-data'>
+        <view class='list'>
+            <view class='item acea-row row-between-wrapper' bindtap="editname">
+                <view>头像</view>
+                <view class='pictrue'>
+                    <button open-type="chooseAvatar" bindchooseavatar="bindchooseavatar" class="btava">
+                    <image style="height: 100%;width: 100%;border-radius:0" src="{{avatarUrl}}"></image>
+                    </button>
+                </view>
+            </view>
+            <view class='item acea-row row-between-wrapper' bindtap="editname">
+                <view>名字</view>
+                <view class='input'>
+                  <input type="nickname" name="nickname" disabled='{{btname}}' value='{{userInfo.nickName}}' />
+                </view>
+            </view>
+            <view class="item acea-row row-between-wrapper" bindtap="editname">
+            <view class="section__title">省市</view>
+            <picker class="priver" mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}" name="city">
+              <view class="picker">
+                {{region[0]}} | {{region[1]}} | {{region[2]}} 
+              </view>
+            </picker>
+            </view>
+            <view class='item acea-row row-between-wrapper' bindtap="editname">
+                <view>性别</view>
+                <view class="form-item list-msg">
+                  <picker bindchange="pickSex" value="{{ gender }}" class="sex" range="{{ columns }}" name="sex">
+                  <view class="right-text">
+                      {{ columns[gender] == "" ? "请输⼊性别" : "" }}{{ columns[gender] }}
+                  </view>
+                </picker>
+              </view>            
+            </view>
+            <view class='item acea-row row-between-wrapper' bindtap="editname">
+                <view>专业年级</view>
+                <picker bindchange="pickGrade" mode="date" value="{{ grade }}" class="grade"  name="grade" fields="year" start="2020-01-01" style="float: right;width: 100px;text-align: center;" decode="{{true}}"	header-text="请选择入学年级" >
+                  <view class="right-text" style="float: right;">
+                      {{ grade == "" ? "请选择" : "" }}{{ grade }}年级
+                  </view>
+                </picker>
+                <view class='input' style="float: right;width: 120px;">
+                    <input type='text'  name='major' value='{{userInfo.major}}' placeholder="请输入专业" ></input>
+                </view>
+            </view>
+            <view class='item acea-row row-between-wrapper' bindtap="editname">
+                <view>手机号码</view>
+                <view style="float: left;text-align: center;width: 120px;color: #868686;">
+                <input type="text" placeholder="请修改手机号" value="{{confirm_phone}}" disabled="true"/>
+              </view>
+              <!-- 蒙层显示 -->
+                <view class="container" style="float: left;padding: 0px;">
+                  <button class="modify-btn" bindtap="onModifyPhoneTap">修改手机号</button>
+                  <view class="modal {{showModal ? 'show' : ''}}" bindtap="onModalTap">
+                    <view class="modal-content" catchtap="onModalContentTap">
+                      <!-- 将之前的手机号填写和获取验证码的代码放在这里 -->
+                      <view class="container">
+                      <view class="input-group">
+                        <input
+                          class="input"
+                          type="number"
+                          placeholder="请输入手机号"
+                          value="{{phone}}"
+                          maxlength="11"
+                          bindinput="onPhoneInputChange"
+                        />
+                      </view>
+                      <view class="input-group">
+                        <input
+                          class="input"
+                          type="number"
+                          placeholder="请输入验证码"
+                          value="{{code}}"
+                          maxlength="6"
+                          bindinput="onCodeInputChange"
+                        />
+                        <button
+                          class="get-code-btn {{countdown === 60 ? '' : 'disabled'}}"
+                          bindtap="onGetCodeTap">
+                          {{countdown === 60 ? '获取验证码' : countdown + 's'}}
+                        </button>
+                        
+                      </view>
+                      <button class="confirm-btn" bindtap="onConfirmTap">确认</button>
+                    </view>
+
+                    </view>
+                    </view>
+                    </view>
+                    </view>
+            <!-- <view class='item acea-row row-between-wrapper'>
+                <view>ID号</view>
+                <view class='input acea-row row-between-wrapper'>
+                    <input type='text' value='1000{{userInfo.userId}}' disabled='true' class='id'></input>
+                    <text class='iconfont icon-suozi'></text>
+                </view>
+            </view> -->
+        </view>
+        <button class='modifyBnt' bindtap="exitLogin">退 出</button>
+    </view>
+    <button class="saveBtn" style="display: {{btsave}};" form-type="submit" type="primary">保存修改</button>
+</form>
+
+<view class="footer">
+<!-- <button bindtap="test">test</button> -->
+</view>
+</view>
+</view>
+
+

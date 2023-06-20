@@ -1,0 +1,49 @@
+<!--pages/manageShopDetail/manageShopDetail.wxml-->
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+<view class="container" style='margin-top: {{height*2+20}}px'>
+  <form bindsubmit="formSubmit">
+    <view class="form-item">
+      <text>商店名称：</text>
+      <input type="text" value="{{shopMessage.shopName}}" name="shopName" />
+    </view>
+    <view class="form-item">
+      <text>商店介绍：</text>
+      <textarea value="{{shopMessage.shopIntro}}" name="shopIntro" />    </view>
+    <view class="form-item">
+      <text>商店电话：</text>
+      <input type="text" value="{{shopMessage.shopPhone}}" name="shopPhone" />
+    </view>
+    <view class="form-item">
+      <text>合作时间：</text>
+      <picker mode="date" value="{{shopMessage.shopCreateTime}}" bindchange="bindDateChange">
+        <view class="picker" style="height: 20px;">{{shopMessage.shopCreateTime}}</view>
+      </picker>
+    </view>
+    <view class="form-item">
+      <text>商店图片：</text>
+      <button bindtap="chooseShopImages">选择图片</button>
+      <view class="image-list">
+        <block wx:for="{{shopMessage.shopImages}}" wx:key="*this" wx:for-index="index">
+        <image wx:if="{{index < 3}}" src="{{item.shopImages}}" mode="aspectFit" bindtap="deleteImage" data-index="{{index}}" />
+      </block>
+
+      </view>
+    </view>
+    <view class="form-item">
+      <text>商店头像：</text>
+      <button bindtap="chooseShopAvatar">选择图片</button>
+      <image src="{{shopMessage.shopAvatar}}" mode="aspectFit" />
+    </view>
+     <!-- map -->
+     <view class="map">
+      <view class="main_goods_title">位置</view>
+      <view class="map_back">
+        <map longitude="{{shopMessage.shopLongitude}}" latitude="{{shopMessage.shopLatitude}}" scale="16" show-location="true" markers="{{markers}}" />
+      </view>
+    </view>
+    <view class="form-item">
+      <button bindtap="chooseLocation">选择地点</button>
+    </view>
+    <button form-type="submit">提交</button>
+  </form>
+</view>

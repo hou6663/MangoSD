@@ -1,0 +1,11 @@
+<!--pages/homeImg/homeImg.wxml-->
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+<view class='container' style='margin-top: {{height*2+20}}px'>
+  <view class="item" wx:for="{{imageList}}" wx:key="swiperId">
+    <view class="item_id"><p class="text">P{{item.swiperId}}:</p></view>
+    <view class="item_img">
+    <image class="img" src="{{item.swiperImageUrl}}" mode="aspectFit"></image>
+    <image class="edit-icon" data-id="{{item.swiperId}}" data-url="{{item.swiperImageUrl}}" bindtap="changeImg" src="https://dudu6663.asia/mangoImg/ico/edit.png"></image>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,79 @@
+/* pages/list/list.wxss */
+.container{
+  padding:0px;
+  background-color: white;
+}
+.page-header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border-bottom: 1rpx solid #ccc;
+}
+.page-title {
+  padding: 20rpx 40rpx;
+  color: #999;
+  font-size: 38rpx;
+  text-align: center;
+}
+.page-body {
+  width: 100%;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+.item {
+  display: flex;
+  padding: 20rpx 40rpx;
+  border-bottom: 1rpx solid #eee;
+  cursor: pointer;
+}
+.item .poster {
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 20rpx;
+  border-radius: 20rpx;
+}
+.item .meta {
+  flex: 1;
+}
+.item .meta .title,.item .meta .sub-title {
+  display: block;
+  margin-bottom: 15rpx;
+}
+.item .meta .title {
+  font-size: 32rpx;
+}
+.item .meta .sub-title {
+  font-size: 22rpx;
+  color: #c0c0c0;
+}
+.item .meta .artists {
+  font-size: 26rpx;
+  color: #999;
+}
+.item .rating {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #f74c31;
+}
+.tips {
+  font-size: 28rpx;
+  text-align: center;
+  padding: 50rpx;
+  color: #ccc;
+}
+.tips image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
+.tips image,.tips text {
+  vertical-align: middle;
+}
+.unread-dot {
+  width: 12px;
+  height: 12px;
+  background-color: red;
+  border-radius: 50%;
+  float: right;
+}

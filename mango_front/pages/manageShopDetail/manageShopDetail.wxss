@@ -1,0 +1,49 @@
+.container {
+  padding: 20px;
+  background-color: white;
+}
+
+.form-item {
+  margin-bottom: 20px;
+}
+textarea {
+  width: 90%;
+  padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.form-item text {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form-item input {
+  width: 90%;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  margin: 10px 0;
+  width: 100%;
+  height: 40px;
+  background-color: #1aad19;
+  color: #fff;
+  border: none;
+}
+.map {
+  background-color: white;
+  padding: 20rpx;
+  margin-top: 10rpx;
+}
+
+.map_back map {
+  margin-top: 10rpx;
+  width: 97%;
+  padding: 10rpx;
+  height: 300rpx;
+}

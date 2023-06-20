@@ -1,0 +1,22 @@
+<!--pages/proclamation/proclamation.wxml-->
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+<view class="container" style='margin-top: {{height*2+20}}px'>
+<view class="body">
+  <button class="add-notice-button" bindtap="addNewNotice">添加公告</button>
+  <block wx:for="{{ noticeMessage }}" wx:key="noticeId" >
+    <view class="notice" bindtap="clickNotice"  id="{{item.noticeId}}" data-notice-detail="{{item.noticeDetail}}">
+      <view class="notice-id">{{ item.noticeId }}</view>
+      <view class="notice-detail">{{ item.noticeDetail }}</view>
+    </view>
+  </block>
+  <view class="custom-modal" wx:if="{{showModal}}" >
+  <view class="custom-modal-content">
+    <textarea class="custom-modal-textarea" value="{{noticeDetail}}" bindinput="onInput"></textarea>
+    <view class="custom-modal-buttons">
+      <button bindtap="cancelEdit">取消</button>
+      <button bindtap="confirmEdit">确定</button>
+    </view>
+  </view>
+  </view>
+</view>
+</view>

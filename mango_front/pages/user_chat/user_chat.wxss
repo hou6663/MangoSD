@@ -1,0 +1,471 @@
+.head{
+  text-align: center;
+  font-size: 35rpx;
+  font-weight: bold;
+  background-color: lightgoldenrodyellow;
+  padding: 10px;
+}
+.websocket-bottom {
+  width: 100%;
+  height: 100rpx;
+  position: fixed;
+  bottom: 0rpx;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  z-index: 9999;
+}
+.reply_function_pic {
+  width: 32px;
+  height: 32px;
+  margin-top:16px;
+}
+.function_item_img{
+width: 64px;
+height: 64px;
+background:#FFFFFF;
+border-radius:10px;
+}
+.function_item {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 12px;
+  text-align: center;
+}
+.wb-left {
+  width: 80%;
+  height: 80%;
+}
+
+.wb-left input {
+  width: 90%;
+  margin: auto;
+  height: 100%;
+  font-size: 26rpx;
+  background: #eee;
+  padding: 0 10rpx;
+  border-radius: 10rpx;
+}
+
+.wb-right {
+  width: 120rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  color: #fff;
+  background: #19be6b;
+  font-size: 25rpx;
+  border-radius: 10rpx;
+  margin-left: 10rpx;
+}
+
+.websocket-list {
+  width: 100%;
+  padding-bottom: 80rpx;
+  font-size: 28rpx;
+}
+
+.wl-for {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  display: flex;
+  align-items: center;
+  background: #fff;
+}
+
+.wl-for-1 {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  display: flex;
+  align-items: center;
+}
+
+.wlf-left {
+  color: blue;
+  margin-right: 20rpx;
+}
+.content{
+  padding-bottom: 0;
+}
+.padding-bottom{
+  padding-bottom: 110rpx;
+}
+/* ==================
+         聊天
+ ==================== */
+
+ .cu-chat {
+	display: flex;
+	flex-direction: column;
+}
+
+.cu-chat .cu-item {
+	display: flex;
+  padding: 30rpx 15rpx 0rpx 15rpx;
+	position: relative;
+}
+.messageImg{
+  width: 200rpx;
+  border-radius: 5px;
+}
+video{
+  border-radius: 5px;
+}
+.reply_button image {
+  width: 32px;
+  height: 32px;
+}
+.cu-chat .cu-item>.cu-avatar {
+	width: 80rpx;
+	height: 80rpx;
+}
+
+.cu-chat .cu-item>.main {
+	max-width: calc(100% - 260rpx);
+	margin: 0 40rpx;
+	display: flex;
+	align-items: center;
+}
+
+.cu-chat .cu-item>image {
+  height: 320rpx;
+
+}
+
+page{
+  background:rgb(245, 245, 245)
+}
+.messageTime{
+  color: #999;
+  margin-top: 30rpx;
+  text-align: center;
+}
+.bg-green{
+  background: rgb(149,236,105);
+}
+
+.bg-white{
+  background:#fff
+}
+
+.cu-chat .cu-item>.main .content {
+
+	padding: 0rpx 20rpx;
+	border-radius: 6rpx;
+	display: inline-flex;
+	max-width: 100%;
+	align-items: center;
+	font-size: 30rpx;
+	position: relative;
+	min-height: 80rpx;
+	line-height: 40rpx;
+	text-align: left;
+}
+
+.cu-chat .cu-item>.main .content:not([class*="bg-"]) {
+	background-color: var(--white);
+	color: var(--black);
+}
+
+.cu-chat .cu-item .date {
+	position: absolute;
+	font-size: 24rpx;
+	color: var(--grey);
+	width: calc(100% - 320rpx);
+	bottom: 20rpx;
+	left: 160rpx;
+}
+
+.cu-chat .cu-item .action {
+	padding: 0 30rpx;
+	display: flex;
+	align-items: center;
+}
+
+.cu-chat .cu-item>.main .content::after {
+	content: "";
+	top: 27rpx;
+	transform: rotate(45deg);
+	position: absolute;
+	z-index: -1;
+	display: inline-block;
+	overflow: hidden;
+	width: 24rpx;
+	height: 24rpx;
+	left: -12rpx;
+	right: initial;
+	background-color: inherit;
+}
+
+.cu-chat .cu-item.self>.main .content::after {
+	left: auto;
+	right: -12rpx;
+}
+
+.cu-chat .cu-item>.main .content::before {
+	content: "";
+	top: 30rpx;
+	transform: rotate(45deg);
+	position: absolute;
+	z-index: -1;
+	display: inline-block;
+	overflow: hidden;
+	width: 24rpx;
+	height: 24rpx;
+	left: -12rpx;
+	right: initial;
+	background-color: inherit;
+	filter: blur(5rpx);
+	opacity: 0.3;
+}
+
+.cu-chat .cu-item>.main .content:not([class*="bg-"])::before {
+	background-color: var(--black);
+	opacity: 0.1;
+}
+
+.cu-chat .cu-item.self>.main .content::before {
+	left: auto;
+	right: -12rpx;
+}
+
+.cu-chat .cu-item.self {
+	justify-content: flex-end;
+	text-align: right;
+}
+
+.cu-chat .cu-info {
+	display: inline-block;
+	margin: 20rpx auto;
+	font-size: 24rpx;
+	padding: 8rpx 12rpx;
+	background-color: rgba(0, 0, 0, 0.2);
+	border-radius: 6rpx;
+	color: var(--white);
+	max-width: 400rpx;
+	line-height: 1.4;
+}
+.reply_wrp {
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  background-color: #F9F9F9;
+}
+.textMessageContent{
+  padding: 5px;
+  /* background-color: #fff; */
+  /* border: 1px solid #EDEDED; */
+  border-radius: 5px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  line-height: 24px;
+  max-width: 200px;
+}
+.reply_tool {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  font-size: 0;
+  width:100%;
+  padding: 8px 0px;
+  background-color: #F9F9F9;
+
+}
+.positionfixed{
+  position: fixed;
+}
+.reply_tool:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 1px;
+  border-top: 1 rpx solid rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.1);
+}
+.reply_form_wrp {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  min-width: 0;
+}
+.reply_label {
+  display: block;
+  background-color: #FFFFFF;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  margin-right: 8px;
+}
+.reply_input {
+  font-size: 17px;
+  min-height: 40px;
+  /* height: 40px;  */
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding: 10px 12px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  caret-color: #1AAD19;
+}
+.reply_input[disabled] {
+  background-color: #E8E8E8;
+  color: #888888;
+}
+.reply_button {
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  margin-right: 8px;
+}
+.reply_button.active {
+  opacity: 0.5;
+}
+.reply_button image {
+  width: 32px;
+  height: 32px;
+}
+.reply_button image:active {
+  opacity: 50%;
+}
+.reply_button:last-child {
+  margin-right: 0;
+}
+.reply_panel_wrp {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+.reply_panel {
+  height: 200px;
+  overflow: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 300px;
+  -webkit-transition: top .2s;
+  transition: top .2s;
+}
+.reply_panel[hidden] {
+  display: block;
+}
+.reply_panel.show {
+  height: 300px;
+  top: 0;
+}
+.reply_panel:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 1px;
+  border-top: 1 rpx solid rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.1);
+}
+.sending{
+  color: #999;
+  animation:sending 1s linear infinite;
+  width: 25px;
+  height: 25px;
+}
+@keyframes sending{
+  0%{-webkit-transform:rotate(0deg);}
+  25%{-webkit-transform:rotate(90deg);}
+  50%{-webkit-transform:rotate(180deg);}
+  75%{-webkit-transform:rotate(270deg);}
+  100%{-webkit-transform:rotate(360deg);}
+}
+
+/**
+浮窗 start
+**/
+/* component/popup.wxss */
+.wx-popup {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .5);
+}
+.popup-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  width: 80%;
+  max-width: 600rpx;
+  border: 2rpx solid #ccc;
+  border-radius: 10rpx;
+  box-sizing: bordre-box;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  background: #fff;
+}
+.wx-popup-title {
+  width: 100%;
+  padding: 20rpx;
+  text-align: center;
+  font-size: 14px;
+  border-bottom: 2rpx solid #ffcc00;
+}
+.wx-popup-con {
+  margin: 20rpx 10rpx;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 300px;
+  overflow: scroll;
+}
+.wx-popup-con .item{
+  width: 20%;
+  padding: 9rpx 6%;
+  border: #ffffff 1rpx solid;
+}
+.wx-popup-con .matchItem{
+  width: 100%;
+  padding: 9rpx 6%;
+  border: #ffffff 1rpx solid;
+}
+.gift-selected{
+  border: #ffcc00 1rpx solid !important;
+}
+.wx-popup-con .item image{
+  width: 50px;
+  height: 50px;
+}
+.wx-popup-con .item .name{
+  font-size:12px;
+  display: block;
+  color:#333
+}
+.wx-popup-con .item .price{
+  font-size:9px;
+  display: block;
+  color:#999
+}
+.wx-popup-btn {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40rpx;
+}
+.wx-popup-btn text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 88rpx;
+  border: 2rpx solid #ffcc00;
+  border-radius: 88rpx;
+}

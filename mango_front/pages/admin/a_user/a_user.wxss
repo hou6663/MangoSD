@@ -1,0 +1,38 @@
+/* pages/admin/a_user/a_user.wxss */
+.content{
+  background-color: white;
+  padding-top: 10px;
+}
+.cell{
+  color: #000;
+  font-size: 16px;
+  text-align: center;
+}
+.superAdmin{
+  background-color: #49535F;
+  margin:0 8px;
+  padding: 3px;
+  color:#CEC7B7;
+  font-family: "BiauKai";
+}
+.admin{
+  background-color: #447AA9;
+  margin:0 8px;
+  padding: 3px;
+  font-family: "BiauKai";
+  color: #F0EBE5;
+}
+.normalUser{
+  background-color: #5B8982;
+  margin:0 8px;
+  padding: 3px;
+  font-family: "BiauKai";
+  color: white;
+}
+.lockUser{
+  background-color: #A61840;
+  margin:0 8px;
+  padding: 3px;
+  font-family: "BiauKai";
+  color: #FFDEC3;
+}

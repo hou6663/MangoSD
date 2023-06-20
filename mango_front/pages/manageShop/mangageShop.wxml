@@ -1,0 +1,20 @@
+<!--pages/manageShop/mangageShop.wxml-->
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+<view class='container' style='margin-top: {{height*2+20}}px'>
+  <button class="add-notice-button" bindtap="addNewShop">添加商店</button>
+
+  <block wx:for="{{shopMessage}}" wx:key="shopId">
+  <view class="shop-container" bindlongtap="deleteShop"  data-shopid="{{item.shopId}}">
+    <image class="avatar" src="{{item.shopAvatar}}"></image>
+    <view class="info">
+      <view class="name">{{item.shopName}}</view>
+      <view class="intro">{{item.shopIntro}}</view>
+      <view class="phone">电话：{{item.shopPhone}}</view>
+      <!-- 如果还有其他信息，可以继续添加 -->
+    </view>
+    <view class="mangageButton"><button bindtap="goShop" data-shopid="{{item.shopId}}">管理</button></view>
+  </view>
+</block>
+
+
+</view>

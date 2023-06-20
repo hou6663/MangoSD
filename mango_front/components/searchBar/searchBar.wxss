@@ -1,0 +1,15 @@
+/* components/searchBar/searchBar.wxss */
+.nav-wrap {
+  padding-top: 15px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: #fff;
+  color: #000;
+  z-index: 9999999;
+}
+.tit_seabox{
+
+  width: 75%;
+  padding-bottom: 2px !important;
+}

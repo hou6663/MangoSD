@@ -1,0 +1,70 @@
+<!--pages/admin/admin.wxml-->
+<view class="htmleaf-container" style="background:white;display:{{isLoading?'none':'block'}};height:100%;">
+
+<view class="spinner-box" style="margin:0 auto;">
+  <view class="pulse-container" style="margin-top:500rpx;">
+    <view class="pulse-bubble pulse-bubble-1"></view>
+    <view class="pulse-bubble pulse-bubble-2"></view>
+    <view class="pulse-bubble pulse-bubble-3"></view>
+  </view>
+</view>
+</view>
+
+
+<view style="display:{{isLoading?'block':'none'}}">
+
+<nav-bar navbar-data='{{nvabarData}}'></nav-bar>
+<view class='container' style='margin-top: {{height*2+20}}px'>
+  <view class="top">
+    <view class="user_message" >
+      <view class="user_image">
+        <image src="{{userInfo.avatarUrl==null?'../../images/other/logo.png':userInfo.avatarUrl}}" mode="widthFix" />
+      </view>
+      <view class="user_detail">
+        <view class="user_nickname">
+          <text>{{userInfo.nickName==null?"登陆后查看":userInfo.nickName}}</text>
+        </view>
+        <view class="user_time">
+          <text style="display:{{userInfo.province==null?'none':''}}">来自 {{userInfo.province!=""?userInfo.province+" ":"火星"}}{{userInfo.city!=""?userInfo.city+"":""}} 的 {{userInfo.gender==1?"帅气小伙":"漂亮小姐姐"}}</text>
+        </view>
+      </view>
+      <view class="admin">
+          <view class="{{userIsSuperAdmin == 1 ? 'flag_super' : 'flag_admin'}}">
+            {{userIsSuperAdmin == 1 ? "超级管理员" : "管理员"}}
+          </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="linkBody">
+  
+
+<!-- 主要内容位置 -->
+<van-cell
+  is-link
+  title="用户管理"
+  link-type="navigateTo"
+  url="/pages/admin/a_user/a_user"
+/>
+<van-cell
+  is-link
+  title="商店管理"
+  link-type="navigateTo"
+  url="/pages/manageShop/mangageShop"
+/>
+<van-cell
+  is-link
+  title="公告管理"
+  link-type="navigateTo"
+  url="/pages/proclamation/proclamation"
+/>
+<van-cell
+  is-link
+  title="首页轮播图管理"
+  link-type="navigateTo"
+  url="/pages/homeImg/homeImg"
+/>
+
+
+</view>
+</view>

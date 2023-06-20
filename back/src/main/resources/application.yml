@@ -1,0 +1,110 @@
+server:
+  port: 7778
+  ssl:
+    key-store: /www/wwwroot/位置/keystore.jks
+    key-store-password: 123456
+    key-store-type: jks
+    key-password: 123456
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://数据库地址:3306/mangguo?useSSL=false
+    username: 用户名
+    password: 密码
+    initial-size: 10
+    max-active: 100
+    min-idle: 10
+    max-wait: 60000
+    pool-prepared-statements: true
+    max-pool-prepared-statement-per-connection-size: 20
+    time-between-eviction-runs-millis: 60000
+    min-evictable-idle-time-millis: 300000
+    #Oracle需要打开注释
+    #validation-query: SELECT 1 FROM DUAL
+    test-while-idle: true
+    test-on-borrow: false
+    test-on-return: false
+    stat-view-servlet:
+      enabled: true
+      url-pattern: /druid/*
+      #login-username: admin
+      #login-password: admin
+    filter:
+      stat:
+        log-slow-sql: true
+        slow-sql-millis: 1000
+        merge-sql: false
+      wall:
+        config:
+          multi-statement-allow: true
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
+  # jackson时间格式化
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  mvc:
+    throw-exception-if-no-handler-found: true
+
+#mybatis
+mybatis-plus:
+  mapper-locations: classpath:mappers/*.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: work.hou6663.mango.model
+  global-config:
+    #数据库相关配置
+    db-config:
+      #主键类型  AUTO:"数据库ID自增", INPUT:"用户输入ID", ID_WORKER:"全局唯一ID (数字类型唯一ID)", UUID:"全局唯一ID UUID";
+      id-type: AUTO
+      logic-delete-value: -1
+      logic-not-delete-value: 0
+    banner: false
+  #原生配置
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    call-setters-on-nulls: true
+    jdbc-type-for-null: 'null'
+
+# 日志,生产环境注释即可
+logging:
+  level:
+    work.hou6663.mango.mapper: debug
+
+spring.jackson.date-format: yyyy-MM-dd HH:mm
+
+#这个是时区，一定要加，否则会默认为格林尼治时间，即少8小时
+spring.jackson.time-zone: GMT+8
+#
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+
+oa:
+  wx:
+    app-id: 
+    app-secret: 
+    msgDataFormat: JSON
+sms:
+  appid: 
+  appkey: 
+  endpoint: 上海
+  templateId: 
+  sign: 
+  sdkId: 
+  bucketName: 
+img:
+  avatar: /www/wwwroot/路径/avaimg
+  avatarHttpImg: https://路径/avaimg/
+  headImg: /www/wwwroot/路径/mangoImg/shop_img
+  headHttpImg: https://路径/mangoImg/shop_img/
+  chatImg: /www/wwwroot/d路径/mangoImg/user_chat_img/
+  chatHttp: https://路径/mangoImg/user_chat_img/
+  shopImg: /www/wwwroot/路径/mangoImg/shopMessage_img/
+  shopHttpImg: https://路径/mangoImg/shopMessage_img/

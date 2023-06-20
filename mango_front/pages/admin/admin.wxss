@@ -1,0 +1,55 @@
+/* pages/admin/admin.wxss */
+.top {
+  background-color: white;
+}
+.user_message {
+  display: flex;
+  flex-direction: row;
+  padding-left: 20rpx;
+  padding-top: 50rpx;
+}
+
+.user_image image {
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+}
+
+.user_detail {
+  margin-left: 10rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 10rpx;
+}
+
+.user_nickname {
+  font-size: 35rpx;
+  font-weight: 800;
+  color: cadetblue;
+}
+
+.user_time {
+  font-weight: 200;
+  color: #999;
+  font-size: 25rpx;
+}
+.flag_super{
+  margin-left: 30px;
+  background-color: #49535F;
+  padding: 5px;
+  color:#CEC7B7;
+  font-family: "BiauKai";
+}
+.flag_admin{
+  background-color: #447AA9;
+  margin-left: 30px;
+  padding: 5px;
+  font-family: "BiauKai";
+  color: #F0EBE5;
+
+}
+.linkBody{
+  background-color: white;
+  padding:20px 0;
+}

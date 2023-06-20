@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="work.hou6663.mango.mapper.MessageMapper">
+
+    <!-- 定义结果映射 -->
+    <resultMap id="BaseResultMap" type="work.hou6663.mango.model.MangoChatMessage">
+        <id column="id" jdbcType="BIGINT" property="id" />
+        <result column="created_by" jdbcType="BIGINT" property="createdBy" />
+        <result column="created_time" jdbcType="TIMESTAMP" property="createdTime" />
+        <result column="updated_by" jdbcType="BIGINT" property="updatedBy" />
+        <result column="updated_time" jdbcType="TIMESTAMP" property="updatedTime" />
+        <result column="del_flag" jdbcType="VARCHAR" property="delFlag" />
+        <result column="status" jdbcType="VARCHAR" property="status" />
+        <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+        <result column="type" jdbcType="TINYINT" property="type" />
+        <result column="content" jdbcType="LONGVARCHAR" property="content" />
+        <result column="content_type" jdbcType="TINYINT" property="contentType" />
+        <result column="is_read" jdbcType="VARCHAR" property="isRead" />
+        <result column="sender" jdbcType="BIGINT" property="sender" />
+        <result column="receiver" jdbcType="BIGINT" property="receiver" />
+        <result column="request_id" jdbcType="VARCHAR" property="requestId" />
+        <result column="is_last" jdbcType="TINYINT" property="isLast" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        id, created_by, created_time, updated_by, updated_time, del_flag, status,
+        remarks, type , content , content_type , is_read , sender , receiver , request_id , is_last
+    </sql>
+    <!-- 查询消息列表 -->
+    <select id="getMessageList" resultMap="BaseResultMap">
+        SELECT *
+        FROM message
+        WHERE sender = #{sender} AND receiver = #{receiver}
+        ORDER BY create_time DESC
+    </select>
+
+</mapper>

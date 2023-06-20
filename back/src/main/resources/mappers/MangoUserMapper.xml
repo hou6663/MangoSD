@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="work.hou6663.mango.mapper.MangoUserMapper">
+    <resultMap id="BaseResultMap" type="work.hou6663.mango.model.MangoUser">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="user_id" jdbcType="INTEGER" property="userId"/>
+        <result column="user_openid" jdbcType="VARCHAR" property="userOpenid"/>
+        <result column="user_gender" jdbcType="INTEGER" property="userGender"/>
+        <result column="user_avatar" jdbcType="VARCHAR" property="userAvatar"/>
+        <result column="user_nickname" jdbcType="VARCHAR" property="userNickname"/>
+        <result column="user_is_admin" jdbcType="INTEGER" property="userIsAdmin"/>
+        <result column="user_allow" jdbcType="INTEGER" property="userAllow"/>
+        <result column="user_creat_time" jdbcType="TIMESTAMP" property="userCreatTime"/>
+        <result column="user_city" jdbcType="VARCHAR" property="userCity"/>
+        <result column="user_grade" jdbcType="VARCHAR" property="userGrade"/>
+        <result column="user_phone" jdbcType="VARCHAR" property="userPhone"/>
+        <result column="user_phone_code" jdbcType="VARCHAR" property="userPhone_Code"/>
+        <result column="user_phone_code_time" jdbcType="TIMESTAMP" property="userPhone_Code_Time"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        user_id, user_openid, user_gender, user_avatar, user_nickname, user_is_admin, user_allow,
+        user_creat_time, user_city , user_grade , user_phone , user_phone_code , user_phone_code_time
+    </sql>
+    <insert id="insertUserMessage">
+        <selectKey resultType="Integer" keyProperty="userId">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        INSERT INTO mango_user (user_openid, user_gender, user_avatar, user_nickname) VALUES
+        (#{userOpenid},#{userGender},#{userAvatar},#{userNickname})
+    </insert>
+
+    <select id="selectUserByOpenid" resultMap="BaseResultMap">
+        SELECT * FROM mango_user WHERE user_openid = #{userOpenid}
+    </select>
+
+    <select id="selectUserByID" resultMap="BaseResultMap">
+        SELECT * FROM mango_user WHERE user_id = #{userId}
+    </select>
+
+    <update id="updateBanStatus" parameterType="map">
+        UPDATE mango_user
+        SET user_allow = #{status}
+        WHERE user_id = #{userId}
+    </update>
+
+    <update id="updateUserRole" parameterType="map">
+        UPDATE mango_user
+        SET user_is_admin = #{roleId}
+        WHERE user_id = #{userId}
+    </update>
+
+
+
+    <update id="updateUserInfo" >
+        UPDATE mango_user
+        SET user_nickname = #{userNickname} , user_avatar = #{userAvatar} ,
+            user_gender = #{userGender} , user_city = #{userCity},
+            user_grade = #{userGrade} , user_phone = #{userPhone} ,
+            user_phone_code = #{userPhone_Code} , user_phone_code_time = #{userPhone_Code_Time}
+        WHERE user_id = #{userId};
+    </update>
+</mapper>
